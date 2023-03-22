@@ -43,22 +43,14 @@ export default function Home() {
                 <td>{product.name}</td>
                 <td>{product.price}</td>
                 <td>{product.stock}</td>
-                <td>
-                  <Link
-                    to={`/view/${product.id}`}>
-                    Xem
-                  </Link></td>
                   <td>
-                    <Link
-                    to={`/edit/${product.id}`}>
-                    Cập nhập
-                  </Link>
+                  <Link to={`/view/${product.id}`}>Xem</Link>
                   </td>
                   <td>
-                    <Link
-                    to={`/delete/${product.id}`}>
-                    Xóa
-                  </Link>
+                    <button onClick={() => navigate(`/edit/${product.id}`)}>Cập nhập</button>
+                  </td>
+                  <td>
+                    <button onClick={() => navigate(`/delete/${product.id}`)}>Xóa</button>
                   </td>
               </tr>
             ))}
